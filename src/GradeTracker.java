@@ -4,17 +4,31 @@ public class GradeTracker {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
         ClassRoster classRoster = new ClassRoster();
+        String fileName = "class_data.txt";
 
         while (true) {
             System.out.println("""
 
                     1. Add Student
                     2. Remove Student
-                    3. Display Class Average
-                    4. Display Student Grades
-                    5. Exit""");
+                    3. Input Grades
+                    4. Display Class Average
+                    5. Display Student Grades
+                    6. Display Student Details
+                    7. Modify Grade
+                    8. Save to File
+                    9. Load from File
+                    10. Exit""");
             System.out.print("Enter your choice: ");
-            int choice = userInput.nextInt();
+            int choice;
+
+            try {
+                choice = userInput.nextInt();
+            } catch (Exception e) {
+                classRoster.logError("Invalid input. Please enter a number.", e);
+                userInput.nextLine(); // Consume the invalid input
+                continue;
+            }
 
             switch (choice) {
                 case 1:
@@ -33,19 +47,40 @@ public class GradeTracker {
                     break;
 
                 case 3:
-                    classRoster.displayClassAverage();
+                    classRoster.inputGrades(userInput);
                     break;
 
                 case 4:
-                    classRoster.displayStudentGrades();
+                    classRoster.displayClassAverage();
                     break;
 
                 case 5:
+                    classRoster.displayStudentGrades();
+                    break;
+
+                case 6:
+                    classRoster.displayStudentDetails(userInput);
+                    break;
+
+                case 7:
+                    classRoster.modifyGrade(userInput);
+                    break;
+
+                case 8:
+                    classRoster.saveToFile(fileName);
+                    break;
+
+                case 9:
+                    classRoster.loadFromFile(fileName);
+                    break;
+
+                case 10:
                     System.out.println("Exiting program.");
                     System.exit(0);
 
                 default:
                     System.out.println("Invalid choice. Please enter a valid option.");
+                    break;
             }
         }
     }

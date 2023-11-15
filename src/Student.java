@@ -17,6 +17,10 @@ class Student {
         grades.add(grade);
     }
 
+    public ArrayList<Integer> getGrades() {
+        return grades;
+    }
+
     public double getAverageGrade() {
         if (grades.isEmpty()) {
             return 0.0;
