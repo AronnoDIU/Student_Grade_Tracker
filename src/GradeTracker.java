@@ -8,7 +8,6 @@ public class GradeTracker {
 
         while (true) {
             System.out.println("""
-
                     1. Add Student
                     2. Remove Student
                     3. Input Grades
@@ -32,18 +31,11 @@ public class GradeTracker {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter student name: ");
-                    userInput.nextLine(); // Consume the newline character
-                    String studentName = userInput.nextLine();
-                    Student newStudent = new Student(studentName);
-                    classRoster.addStudent(newStudent);
+                    addStudent(userInput, classRoster);
                     break;
 
                 case 2:
-                    System.out.print("Enter student name to remove: ");
-                    userInput.nextLine(); // Consume the newline character
-                    String studentToRemove = userInput.nextLine();
-                    classRoster.removeStudent(studentToRemove);
+                    removeStudent(userInput, classRoster);
                     break;
 
                 case 3:
@@ -83,5 +75,20 @@ public class GradeTracker {
                     break;
             }
         }
+    }
+
+    private static void addStudent(Scanner userInput, ClassRoster classRoster) {
+        System.out.print("Enter student name: ");
+        userInput.nextLine(); // Consume the newline character
+        String studentName = userInput.nextLine();
+        Student newStudent = new Student(studentName);
+        classRoster.addStudent(newStudent);
+    }
+
+    private static void removeStudent(Scanner userInput, ClassRoster classRoster) {
+        System.out.print("Enter student name to remove: ");
+        userInput.nextLine(); // Consume the newline character
+        String studentToRemove = userInput.nextLine();
+        classRoster.removeStudent(studentToRemove);
     }
 }

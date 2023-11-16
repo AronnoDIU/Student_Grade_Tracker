@@ -38,11 +38,17 @@ class ClassRoster {
 
         for (Student student : students) {
             if (student.getName().equals(studentName)) {
-                System.out.print("Enter grade for " + studentName + ": ");
-                int grade = scanner.nextInt();
-                student.addGrade(grade);
-                System.out.println("Grade added for " + studentName);
-                return;
+                try {
+                    System.out.print("Enter grade for " + studentName + ": ");
+                    int grade = scanner.nextInt();
+                    student.addGrade(grade);
+                    System.out.println("Grade added for " + studentName);
+                    return;
+                } catch (java.util.InputMismatchException e) {
+                    scanner.nextLine(); // Consume the invalid input
+                    logError("Invalid input. Please enter a valid integer for the grade.", e);
+                    return;
+                }
             }
         }
 
@@ -147,7 +153,13 @@ class ClassRoster {
             fileHandler.setFormatter(formatter);
 
             logger.severe(message);
-            logger.severe(e.getMessage()); // Log the exception message
+
+            // Check if the exception message is not null before logging
+            if (e != null && e.getMessage() != null) {
+                logger.severe(e.getMessage());
+            } else {
+                logger.severe("Exception message is null.");
+            }
 
         } catch (IOException ex) {
             ex.printStackTrace();

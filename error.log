@@ -1,0 +1,12 @@
+Nov 17, 2023 12:20:06 AM ClassRoster logError
+SEVERE: Error saving data to file: class_data.txt
+Nov 17, 2023 12:20:06 AM ClassRoster logError
+SEVERE: Student
+Nov 17, 2023 12:27:49 AM ClassRoster logError
+SEVERE: Invalid input. Please enter a valid integer for the grade.
+Nov 17, 2023 12:27:49 AM ClassRoster logError
+SEVERE: null
+Nov 17, 2023 12:29:18 AM ClassRoster logError
+SEVERE: Invalid input. Please enter a valid integer for the grade.
+Nov 17, 2023 12:29:18 AM ClassRoster logError
+SEVERE: Exception message is null.
