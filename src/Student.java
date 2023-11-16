@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-class Student {
+class Student implements Serializable {
     private final String name;
     private final ArrayList<Integer> grades;
 

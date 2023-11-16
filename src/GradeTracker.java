@@ -4,12 +4,12 @@ public class GradeTracker {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
         ClassRoster classRoster = new ClassRoster();
-        String fileName = "class_data.txt"; // Change this to the name of your file
+        String fileName = "class_data.txt"; // Default file name for saving data
 
         while (true) {
             printMenu(); // Print the menu
             System.out.print("Enter your choice: ");
-            int choice = getUserChoice(userInput, classRoster);
+            int choice = getUserChoice(userInput, classRoster); // Get user choice
 
             switch (choice) {
                 case 1: // For Add student
@@ -64,31 +64,34 @@ public class GradeTracker {
                 10. Exit""");
     }
 
-    // Helper method to get user choice
+    // getUserChoice method to get user choice
     private static int getUserChoice(Scanner userInput, ClassRoster classRoster) {
         try {
-            return userInput.nextInt();
-        } catch (Exception e) {
+            return userInput.nextInt(); // Get user input as an integer
+        } catch (Exception e) { // Invalid input
             classRoster.logError("Invalid input. Please enter a number.", e);
             userInput.nextLine(); // Consume the invalid input
-            return getUserChoice(userInput, classRoster);
+            return getUserChoice(userInput, classRoster); // Recursively call the method
         }
     }
 
-    // Helper method to add a student
+    // To add a student to the class
     private static void addStudent(Scanner userInput, ClassRoster classRoster) {
         System.out.print("Enter student name: ");
         userInput.nextLine(); // Consume the newline character
+
         String studentName = userInput.nextLine();
         Student newStudent = new Student(studentName);
-        classRoster.addStudent(newStudent);
+
+        classRoster.addStudent(newStudent); // Add the new student to the class
     }
 
-    // Helper method to remove a student
+    // Helper method to remove a student from the class
     private static void removeStudent(Scanner userInput, ClassRoster classRoster) {
         System.out.print("Enter student name to remove: ");
         userInput.nextLine(); // Consume the newline character
         String studentToRemove = userInput.nextLine();
-        classRoster.removeStudent(studentToRemove);
+
+        classRoster.removeStudent(studentToRemove); // Remove the student from the class
     }
 }
