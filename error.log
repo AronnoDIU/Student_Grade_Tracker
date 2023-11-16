@@ -10,3 +10,23 @@ Nov 17, 2023 12:29:18 AM ClassRoster logError
 SEVERE: Invalid input. Please enter a valid integer for the grade.
 Nov 17, 2023 12:29:18 AM ClassRoster logError
 SEVERE: Exception message is null.
+Nov 17, 2023 12:31:02 AM ClassRoster logError
+SEVERE: Invalid input. Please enter a valid integer for the grade.
+Nov 17, 2023 12:31:02 AM ClassRoster logError
+SEVERE: No exception message available.
+Nov 17, 2023 12:32:02 AM ClassRoster logError
+SEVERE: Invalid input. Please enter a valid integer for the grade.
+Nov 17, 2023 12:32:02 AM ClassRoster logError
+SEVERE: No exception message available.
+Nov 17, 2023 12:33:14 AM ClassRoster logError
+SEVERE: Error loading data from file: class_data.txt
+Nov 17, 2023 12:33:14 AM ClassRoster logError
+SEVERE: writing aborted; java.io.NotSerializableException: Student
+Nov 17, 2023 12:37:04 AM ClassRoster logError
+SEVERE: Error loading data from file: class_data.txt
+Nov 17, 2023 12:37:04 AM ClassRoster logError
+SEVERE: writing aborted; java.io.NotSerializableException: Student
+Nov 17, 2023 12:37:46 AM ClassRoster logError
+SEVERE: Invalid input. Please enter a valid integer for the grade.
+Nov 17, 2023 12:37:46 AM ClassRoster logError
+SEVERE: No additional exception information available.

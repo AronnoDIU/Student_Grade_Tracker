@@ -154,11 +154,13 @@ class ClassRoster {
 
             logger.severe(message);
 
-            // Check if the exception message is not null before logging
-            if (e != null && e.getMessage() != null) {
-                logger.severe(e.getMessage());
+            if (e != null) {
+                String exceptionMessage = (e.getMessage() != null && !e.getMessage().isEmpty())
+                        ? e.getMessage()
+                        : "No additional exception information available.";
+                logger.severe(exceptionMessage);
             } else {
-                logger.severe("Exception message is null.");
+                logger.severe("Exception object is null.");
             }
 
         } catch (IOException ex) {
