@@ -6,6 +6,7 @@ public class GradeTracker {
         ClassRoster classRoster = new ClassRoster();
         String fileName = "class_data.txt"; // Default file name for saving data
 
+        // Load data from file if it exists
         while (true) {
             printMenu(); // Print the menu
             System.out.print("Enter your choice: ");
